@@ -1,0 +1,13 @@
+comment_text,toxicity,severe_toxicity,obscene,threat,insult,identity_attack
+"I love this community, everyone is so helpful and kind!",0.0,0.0,0.0,0.0,0.0,0.0
+"Great article, thanks for sharing this information.",0.0,0.0,0.0,0.0,0.0,0.0
+"I disagree with your point but I appreciate the discussion.",0.05,0.0,0.0,0.0,0.0,0.0
+"This is a bit misleading, you should double-check your sources.",0.1,0.0,0.0,0.0,0.05,0.0
+"You are being quite rude, please try to be more polite.",0.15,0.0,0.0,0.0,0.1,0.0
+"This is a really bad take, I'm not sure you understand the topic.",0.25,0.0,0.0,0.0,0.2,0.0
+"Your argument is weak and doesn't make any sense at all.",0.35,0.0,0.0,0.0,0.3,0.0
+"This is complete garbage and you should be ashamed of yourself.",0.55,0.05,0.1,0.0,0.45,0.0
+"Shut up you absolute idiot, nobody cares what you think!",0.82,0.2,0.1,0.0,0.78,0.0
+"You are disgusting and worthless, crawl back under your rock.",0.88,0.35,0.15,0.05,0.82,0.0
+"People like you are a disease on society and should be removed.",0.91,0.45,0.1,0.25,0.7,0.3
+"I will find you and make you regret ever writing this filth.",0.95,0.7,0.2,0.9,0.75,0.0

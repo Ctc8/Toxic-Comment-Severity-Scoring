@@ -1,0 +1,66 @@
+# ============================================================
+# config.yaml — Default training configuration
+# ============================================================
+# Override any value from CLI:
+#   python src/train.py --config configs/config.yaml --architecture baseline
+
+# --- Data ---
+data_dir: "data/"
+sample_frac: 1.0          # set to 0.1 for fast experiments
+val_frac: 0.10
+max_length: 256
+augment: true
+num_workers: 4
+
+# --- Model ---
+architecture: "multitask"   # baseline | attention | multitask
+model_name: "roberta-base"  # roberta-base | bert-base-uncased | microsoft/deberta-v3-base
+dropout: 0.3
+freeze_layers: 0            # freeze bottom N encoder layers (0 = no freezing)
+
+# --- Loss ---
+loss: "combined"            # mse | ranking | huber | combined
+loss_alpha: 1.0             # weight for MSE term
+loss_beta: 0.3              # weight for ranking term
+rank_margin: 0.1
+
+# --- Training ---
+epochs: 3
+batch_size: 32
+encoder_lr: 2.0e-5          # lower LR for pretrained encoder
+head_lr: 1.0e-4             # higher LR for task-specific heads
+weight_decay: 0.01
+warmup_ratio: 0.06          # fraction of total steps for warmup
+fp16: true                  # mixed precision (requires CUDA)
+early_stopping_patience: 2
+
+# --- Output ---
+output_dir: "outputs/"
+
+# --- Logging ---
+use_wandb: false
+wandb_project: "toxic-severity"
+
+# ============================================================
+# Ablation configurations (run separately for each ablation):
+# ============================================================
+#
+# 1. CLS pooling vs attention pooling:
+#    --architecture baseline   vs   --architecture attention
+#
+# 2. MSE only vs combined loss:
+#    --loss mse   vs   --loss combined
+#
+# 3. Encoder choice:
+#    --model-name bert-base-uncased
+#    --model-name roberta-base
+#    --model-name microsoft/deberta-v3-base
+#
+# 4. No augmentation:
+#    --no-augment
+#
+# 5. Frozen layers (parameter-efficient fine-tuning):
+#    --freeze-layers 6
+#
+# 6. Fast experiment (10% of data):
+#    --sample-frac 0.1
