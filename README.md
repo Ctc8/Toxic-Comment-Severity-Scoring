@@ -158,7 +158,7 @@ python src/train.py \
 
 ## Team
 
-- [Your Name] — [contribution]
+- Collin Chuang
 
 ## License
 
