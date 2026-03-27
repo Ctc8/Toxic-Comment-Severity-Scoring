@@ -1,6 +1,6 @@
 # Toxic Comment Severity Scoring
 
-**CS273P Final Project** — A deep learning system that predicts the *severity* of toxic online comments across six dimensions, rather than just classifying them as toxic or not.
+A deep learning system that predicts the *severity* of toxic online comments across six dimensions, rather than just classifying them as toxic or not.
 
 ## Problem
 
